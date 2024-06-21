@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import './Card.css';
 import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
 
-const Card = (props) => {
+const Card = ({product}) => {
 
-  let product = props.product;
   const [show, setShow] = useState(false);
 
   const renderStars = (rate) => {
@@ -25,6 +24,10 @@ const Card = (props) => {
       </>
     );
   };
+
+  function cartHandler() {
+
+  }
 
   const showHandler = () => {
     setShow(!show);
@@ -47,7 +50,7 @@ const Card = (props) => {
           {renderStars(product.rating.rate)}
           <span> ({product.rating.count} reviews)</span>
         </div>
-        <button className="add-to-cart">Add to cart</button>
+        <button className="add-to-cart" onClick={cartHandler}>Add to cart</button>
       </div>
     </div>
   );
