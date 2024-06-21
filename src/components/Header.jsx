@@ -1,22 +1,29 @@
-// src/Header.js
 import React from 'react';
 import './Header.css';
-import logo from '../assets/logo.png';
 
-const Header = () => {
+const Header = ({ data, category, setCategory }) => {
+  function clickHandler(title) {
+    setCategory(title);
+  }
+
   return (
     <header className="header">
       <div className="logo">
-        {/* Replace the text with an actual image if you have one */}
-        {/* <img src={logo} alt="Website Logo" height="40" />
-         */}
-         E-COMMERSE STORE
+        E-COMMERCE STORE
       </div>
       <div className="nav-items">
-        <div className="nav-item">Man</div>
-        <div className="nav-item">Women</div>
-        <div className="nav-item">Electronics</div>
-        <div className="nav-item">Cart</div>
+        {data.map((item) => (
+          <div
+            key={item.title}
+            className="nav-item"
+            style={{
+              color: item.title === category ? '#8be9fd' : 'white',
+            }}
+            onClick={() => clickHandler(item.title)}
+          >
+            {item.title}
+          </div>
+        ))}
       </div>
     </header>
   );
