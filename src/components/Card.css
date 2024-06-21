@@ -1,6 +1,6 @@
 .card {
     border: 1px solid #ccc;
-    /* border-radius: 8px; */
+    border-radius: 8px;
     padding: 16px;
     margin: 16px;
     max-width: 280px;
@@ -115,6 +115,7 @@
     cursor: pointer;
     margin-top: 12px;
     font-size: 16px;
+    border-radius: 8px;
   }
   
   .add-to-cart:hover {
