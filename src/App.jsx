@@ -4,6 +4,7 @@ import Cards from './components/Cards';
 import Header from './components/Header';
 import Loader from './components/Loader';
 import Error from './components/Error';
+import Footer from './components/Footer'
 import {data} from './data';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
       {
         loading ? <Loader /> : ((error) ? <Error error={error} /> : <Cards products={products} category={category} />)
       }
+      <Footer/>
     </>
   );
 }
