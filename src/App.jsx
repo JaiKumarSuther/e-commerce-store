@@ -4,7 +4,7 @@ import Cards from './components/Cards';
 import Header from './components/Header';
 import Loader from './components/Loader';
 import Error from './components/Error';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 import {data} from './data';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
       let response = await fetch('https://fakestoreapi.com/products');
       if (response.ok) {
         let data = await response.json();
+        console.log(data);
         setProducts(data);
       } else {
         throw new Error('There is a problem with the connection');

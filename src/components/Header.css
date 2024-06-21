@@ -3,24 +3,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 30px;
   color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgb(0, 0, 0);
   transition: all 0.3s ease-in-out;
   position: sticky;
   top: 0;
-  background-color: #1c1c1c;
-  z-index: 1000;
+  background-color: #000000;
 }
 
 /* Logo styling */
 .logo {
   font-weight: bold;
-  font-size: 28px;
+  font-size: 25px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #ffffff;
 }
 
 /* Navigation items container */
@@ -33,19 +31,17 @@
 .nav-item {
   margin: 0 20px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: bold;
   position: relative;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  color: #d1d1d1;
 }
 
 /* Hover effect for navigation items */
 .nav-item:hover {
-  color: #00bcd4; /* Light blue color on hover */
-  transform: scale(1.1);
+  color: #8be9fd; /* Light blue color on hover */
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -54,8 +50,8 @@
   content: '';
   display: block;
   width: 0;
-  height: 3px;
-  background: #00bcd4;
+  height: 2px;
+  background: linear-gradient(to right, #ffffff, #ffffff);
   transition: width 0.3s;
   position: absolute;
   bottom: -5px;
@@ -66,49 +62,22 @@
   width: 100%;
 }
 
-/* Active nav item styling */
-.nav-item.active {
-  color: #00bcd4;
-}
-
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    padding: 15px;
+    padding: 10px;
   }
 
   .nav-items {
     flex-direction: column;
-    width: 100%;
-    margin-top: 15px;
   }
 
   .nav-item {
     margin: 10px 0;
-    text-align: center;
-    width: 100%;
   }
 
-  .logo {
-    margin-bottom: 15px;
+  .logo-image {
+    height: 40px;
   }
-}
-
-/* Adding subtle animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.header {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.nav-item {
-  animation: fadeIn 0.7s ease-in-out;
 }
