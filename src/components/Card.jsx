@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './Card.css';
 import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
+import { toast } from "react-toastify";
 
-const Card = ({product}) => {
+const Card = ({product, cart, setCart}) => {
 
   const [show, setShow] = useState(false);
+  const [add, addSet] = useState(false);
+
+  let myCart = [];
 
   const renderStars = (rate) => {
     const roundedRate = Math.round(rate * 2) / 2;
@@ -26,7 +30,16 @@ const Card = ({product}) => {
   };
 
   function cartHandler() {
-
+    addSet(!add);
+    if(add) {
+      toast.warn("removed successfully");
+      myCart = myCart.filter((item) => item !== product);
+      setCart(myCart);
+    } else {
+      toast.success("added successfully");
+      myCart.push(product);
+      setCart(myCart);
+    }
   }
 
   const showHandler = () => {
@@ -50,7 +63,11 @@ const Card = ({product}) => {
           {renderStars(product.rating.rate)}
           <span> ({product.rating.count} reviews)</span>
         </div>
-        <button className="add-to-cart" onClick={cartHandler}>Add to cart</button>
+        <button className="add-to-cart" onClick={cartHandler}
+        style={{backgroundColor: add? '#ababab': '#007bff'}}
+        >
+          {add? 'remove from cart': 'add to cart'}
+        </button>
       </div>
     </div>
   );

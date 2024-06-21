@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Card from "./Card";
 import './Cards.css';
 function Cards({products, category}) {
 
+    const [cart, setCart] = useState([]);
+
     function getProducts() {
-        console.log(products);
         let arr = [];
         if (category === 'all') {
             arr = [...products];
@@ -23,7 +25,7 @@ function Cards({products, category}) {
         <div className="cards">
             {
                 getProducts().map(product => (
-                    <Card key={product.id} product ={product}/>
+                    <Card key={product.id} cart={cart} setCart={setCart} product ={product}/>
                 ))
             }
         </div>

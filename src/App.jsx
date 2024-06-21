@@ -27,7 +27,6 @@ function App() {
       setError(err.message);
     } finally {
       setLoading(false);
-      console.log(error);
     }
   }
 
