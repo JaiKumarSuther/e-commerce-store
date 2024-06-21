@@ -15,7 +15,7 @@ const Footer = () => {
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
             <a href="https://instagram.com/iamjaisuthar" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/jai-kumar-7462a1260/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
