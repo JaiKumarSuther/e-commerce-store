@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import './Card.css'
-import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+import './Card.css';
+import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
 
-const Card = ({product}) => {
+const Card = (props) => {
+
+  let product = props.product;
   const [show, setShow] = useState(false);
 
-  function showHandler() {
-    setShow(!show);
-  }
-
-  let des = product.description.substring(0,80) + '..';
-  let title = (product.title.length >=30) ? product.title.substring(0,40) + '..' : product.title;
   const renderStars = (rate) => {
     const roundedRate = Math.round(rate * 2) / 2;
     const fullStars = Math.floor(roundedRate);
@@ -30,17 +26,21 @@ const Card = ({product}) => {
     );
   };
 
+  const showHandler = () => {
+    setShow(!show);
+  };
 
   return (
     <div className="card">
       <img src={product.image} alt={product.title} className="card-image" />
       <div className="card-details">
-        <h2>{title}</h2>
+        <h2>{product.title}</h2>
         <p className="category">{product.category}</p>
         <p className="price">${product.price}</p>
         <p className="description">
           {show ? product.description.toLowerCase() : `${product.description.toLowerCase().substring(0, 100)}...`}
-          <button onClick={showHandler} className="toggle-description">{show ? 'show less' : 'show more'}
+          <button onClick={showHandler} className="toggle-description">
+            {show ? ' show less' : ' show more'}
           </button>
         </p>
         <div className="card-rating">
@@ -53,5 +53,4 @@ const Card = ({product}) => {
   );
 };
 
-
-export default Card
+export default Card;

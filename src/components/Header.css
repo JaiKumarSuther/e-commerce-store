@@ -1,0 +1,125 @@
+/* src/Header.css */
+
+/* Basic header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 2px 6px rgb(102, 102, 102);
+  transition: all 0.3s ease-in-out;
+  position: sticky;
+  top: 0;
+  background-color: #000000;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-image {
+  height: 50px; /* Adjust as needed */
+}
+
+/* Navigation items container */
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+/* Individual navigation item styling */
+.nav-item {
+  margin: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect for navigation items */
+.nav-item:hover {
+  color: #8be9fd; /* Light blue color on hover */
+}
+
+/* Adding an underline effect on hover */
+.nav-item::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #8be9fd;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Cart icon styling */
+.cart-icon {
+  position: relative;
+  padding-right: 20px;
+}
+
+.cart-icon::before {
+  content: '\f07a'; /* Font Awesome shopping cart icon */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: white;
+}
+
+.cart-icon:hover::before {
+  color: #8be9fd; /* Light blue color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-items {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .logo-image {
+    height: 40px;
+  }
+}
+
+/* Adding some additional visual appeal */
+
+
+
+
+.nav-item {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* More hover effects */
+.nav-item:hover {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item::after {
+  background: linear-gradient(to right, #ffffff, #ffffff); /* Gradient underline effect */
+}
