@@ -61,7 +61,6 @@
     cursor: pointer;
     font-size: 14px;
     padding: 0;
-    margin-left: 4px;
   }
   
   .card-details .description .toggle-description:hover {
@@ -88,7 +87,7 @@
   }
   
   .full-star {
-    color: gold;
+    color: rgb(0, 0, 0);
   }
   
   .empty-star {
