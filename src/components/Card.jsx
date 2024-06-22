@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Card.css';
 import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
 import { toast } from "react-toastify";
 
-const Card = ({product, cart, setCart}) => {
-
+const Card = ({ product, cart, setCart }) => {
   const [show, setShow] = useState(false);
-  const [add, addSet] = useState(false);
+  const [add, setAdd] = useState(false);
 
-  let myCart = [];
+  useEffect(() => {
+    setAdd(cart.includes(product));
+  }, [cart, product]);
 
   const renderStars = (rate) => {
     const roundedRate = Math.round(rate * 2) / 2;
@@ -29,22 +30,17 @@ const Card = ({product, cart, setCart}) => {
     );
   };
 
-  function cartHandler() {
-    addSet(!add);
-    if(add) {
-      toast.warn("removed successfully");
-      myCart = myCart.filter((item) => item !== product);
-      setCart(myCart);
-    } else {
-      toast.success("added successfully");
-      myCart.push(product);
-      setCart(myCart);
-    }
-  }
+  const cartHandler = () => {
+    const newCart = add
+      ? cart.filter((item) => item !== product)
+      : [...cart, product];
 
-  const showHandler = () => {
-    setShow(!show);
+    setCart(newCart);
+    toast[add ? 'warn' : 'success'](add ? "Removed successfully" : "Added successfully");
+    setAdd(!add);
   };
+
+  const showHandler = () => setShow(!show);
 
   return (
     <div className="card">
@@ -54,19 +50,23 @@ const Card = ({product, cart, setCart}) => {
         <p className="category">{product.category}</p>
         <p className="price">${product.price}</p>
         <p className="description">
-          {show ? product.description.toLowerCase() : `${product.description.toLowerCase().substring(0, 100)}...`}
-          <button onClick={showHandler} className="toggle-description">
-            {show ? ' show less' : ' show more'}
-          </button>
+          {product.description.length <= 90 ? product.description : show ? product.description.toLowerCase() : `${product.description.toLowerCase().substring(0, 100)}...`}
+          {product.description.length > 90 && (
+            <button onClick={showHandler} className="toggle-description">
+              {show ? 'Show less' : 'Show more'}
+            </button>
+          )}
         </p>
         <div className="card-rating">
           {renderStars(product.rating.rate)}
           <span> ({product.rating.count} reviews)</span>
         </div>
-        <button className="add-to-cart" onClick={cartHandler}
-        style={{backgroundColor: add? '#ababab': '#007bff'}}
+        <button
+          className="add-to-cart"
+          onClick={cartHandler}
+          style={{ backgroundColor: add ? '#ababab' : '#007bff' }}
         >
-          {add? 'remove from cart': 'add to cart'}
+          {add ? 'Remove from cart' : 'Add to cart'}
         </button>
       </div>
     </div>
