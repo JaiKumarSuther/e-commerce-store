@@ -164,6 +164,8 @@
   .mobile-header {
     display: flex;
     align-items: baseline;
+    gap: 10px;
+    justify-content: start;
   }
 
   .hamburger-menu {
@@ -177,14 +179,5 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-  }
-}
-@media (max-width: 550px) {
-  .mobile-header {
-    justify-content: start;
-    align-items: baseline;
-    height: 190px;
-
-    gap: 10px;
   }
 }
