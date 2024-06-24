@@ -10,6 +10,8 @@ function Cards({products, category}) {
         if (category === 'all') {
             arr = [...products];
             return arr;
+        } else if(category === 'cart') {
+            arr = [...cart];
         } else {
             products.forEach((item) => {
                 if (item.category === category) {

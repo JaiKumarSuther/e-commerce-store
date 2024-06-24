@@ -19,4 +19,8 @@ export const data = [
     id: "5",
     title: "jewelery",
   },
+  {
+    id: "6",
+    title: "cart"
+  }
 ];

@@ -10,6 +10,7 @@
   position: sticky;
   top: 0;
   background-color: #000000;
+  z-index: 1000;
 }
 
 /* Logo styling */
@@ -19,6 +20,15 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: white; /* Ensure the logo text is white */
+}
+
+/* Mobile header styling */
+.mobile-header {
+  /* display: none; */
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 
 /* Navigation items container */
@@ -37,6 +47,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
+  color: white; /* Ensure nav items are white */
 }
 
 /* Hover effect for navigation items */
@@ -62,22 +73,103 @@
   width: 100%;
 }
 
-/* Responsive design for smaller screens */
+/* Dropdown menu styling */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #8be9fd;
+  color: #000000;
+}
+
+/* Hamburger menu styling */
+.hamburger-menu {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white; /* Ensure hamburger menu is white */
+}
+
+/* Mobile navigation items container */
+.mobile-nav-items {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #000000;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.mobile-nav-item {
+  padding: 10px 20px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.mobile-nav-item:hover {
+  background-color: #8be9fd;
+  color: #000000;
+}
+
+/* Mobile dropdown menu styling */
+.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.mobile-dropdown-item {
+  padding: 5px 20px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.mobile-dropdown-item:hover {
+  background-color: #8be9fd;
+  color: #000000;
+}
+
+/* Responsive design for smaller screens */   
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    padding: 10px;
-  }
-
   .nav-items {
-    flex-direction: column;
+    display: none;
   }
 
-  .nav-item {
-    margin: 10px 0;
+  .mobile-header {
+    display: flex;
   }
 
-  .logo-image {
-    height: 40px;
+  .hamburger-menu {
+    display: block;
+  }
+
+  .mobile-nav-items {
+    display: flex;
   }
 }
