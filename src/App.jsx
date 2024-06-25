@@ -20,7 +20,6 @@ function App() {
       let response = await fetch('https://fakestoreapi.com/products');
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
         setProducts(data);
       } else {
         throw new Error('There is a problem with the connection');
@@ -40,7 +39,7 @@ function App() {
     <>
       <Header data={data} setCategory={setCategory} category={category}/>
       {
-        loading ? <Loader /> : ((error) ? <Error error={error} /> : <Cards products={products} category={category} />)
+        loading ? <Loader /> : ((error) ? <Error error={error} /> : <Cards products={products} category={category} setCategory={setCategory} />)
       }
       <Footer/>
     </>

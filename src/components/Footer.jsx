@@ -13,7 +13,7 @@ const Footer = () => {
           <h4>Follow Me</h4>
           <div className="social-icons">
             <a href="https://web.facebook.com/profile.php?id=100041137999971" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-            <a href="https://github.com/JaiKumarSuther" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/JaiKumarSuther" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
             <a href="https://instagram.com/iamjaisuthar" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/jai-kumar-7462a1260/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
           </div>
